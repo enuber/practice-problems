@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Profits</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        input1 = [10, 12, 4,  5,  9];
+        input2 = [14, 20, 4, 12,  5];
+        input3 = [10,  9, 8,  2, 11];
+
+        function findProfit(stockArray) {
+
+            weekObj = {
+                0 : 'monday',
+                1 : 'tuesday',
+                2 : 'wednesday',
+                3 : 'thursday',
+                4 : 'friday'
+            };
+
+            profitObj = {
+                dayToBuy : null,
+                dayToSell : null,
+                maxProfit : 0
+            };
+
+//            maxProfit = 0;
+            for (var i=0; i<stockArray.length; i++) {
+                for (var j=i+1; j<stockArray.length; j++ ) {
+                    if (stockArray[j] - stockArray[i] > profitObj.maxProfit) {
+                        profitObj.maxProfit = stockArray[j] - stockArray[i];
+                        profitObj.dayToBuy = weekObj[i];
+                        profitObj.dayToSell = weekObj[j];
+                    }
+                }
+            }
+            return profitObj;
+        }
+
+        console.log(findProfit(input1));
+        console.log(findProfit(input2));
+        console.log(findProfit(input3));
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -28,13 +28,16 @@ function Account() {
     this.removeFunds = function(moneyToRemove) {
         if (this.funds >= moneyToRemove) {
             this.funds -= moneyToRemove;
+            return(moneyToRemove);
         } else {
+            var fundsLeft = this.funds;
             this.funds = 0;
+            return fundsLeft;
         }
     };
     this.transferAmount = function(receiver, amount) {
-        this.removeFunds(amount);
-        receiver.addFunds(amount);
+        var actualAmount = this.removeFunds(amount);
+        receiver.addFunds(actualAmount);
 
     }
 };
