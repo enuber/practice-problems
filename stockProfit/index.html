@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
         input1 = [10, 12, 4,  5,  9];
-        input2 = [14, 20, 4, 12,  5];
+        input2 = [4, 14, 20, 12,  5];
         input3 = [10,  9, 8,  2, 11];
 
         function findProfit(stockArray) {
@@ -39,9 +39,13 @@
             return profitObj;
         }
 
-        console.log(findProfit(input1));
-        console.log(findProfit(input2));
-        console.log(findProfit(input3));
+        var firstInput = findProfit(input1);
+        console.log("If Bought On: " + firstInput.dayToBuy + " And sold on: " + firstInput.dayToSell + " Profit Would Be: $" + firstInput.maxProfit)
+        var secondInput = findProfit(input2);
+        console.log("If Bought On: " + secondInput.dayToBuy + " And sold on: " + secondInput.dayToSell + " Profit Would Be: $" + secondInput.maxProfit)
+        var thirdInput = findProfit(input3);
+        console.log("If Bought On: " + thirdInput.dayToBuy + " And sold on: " + thirdInput.dayToSell + " Profit Would Be: $" + thirdInput.maxProfit)
+
 
 
 
